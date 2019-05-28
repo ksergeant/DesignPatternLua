@@ -4,11 +4,11 @@ spriteManager.list_sprites = {}
 
 local spriteModel = require("sprite")
 
-function spriteManager.CreateSprite(pName, pNameFile, pTileWidth, pTileHeight, pMap)
+function spriteManager:CreateSprite(pName, pNameFile, pTileWidth, pTileHeight, pMap)
   
   local spriteTempo = {}
   
-  spriteTempo = spriteModel.Create(pName, pNameFile, pTileWidth, pTileHeight, pMap)
+  spriteTempo = spriteModel:Create(pName, pNameFile, pTileWidth, pTileHeight, pMap)
   
   table.insert(spriteManager.list_sprites, spriteTempo)
   
@@ -16,7 +16,7 @@ function spriteManager.CreateSprite(pName, pNameFile, pTileWidth, pTileHeight, p
   
 end
 
-function spriteManager.SettingSprite(pSpriteName, pPosX, pPosY, pOrigineX, pOrigineY, pType)
+function spriteManager:SettingSprite(pSpriteName, pPosX, pPosY, pOrigineX, pOrigineY, pType)
   
   -- recherche dans le spriteManager et si il est présent, il est modifié
   if #spriteManager.list_sprites~=nil then
@@ -43,7 +43,7 @@ function spriteManager.SettingSprite(pSpriteName, pPosX, pPosY, pOrigineX, pOrig
   
 end
 
-function spriteManager.Update(dt)
+function spriteManager:Update(dt)
   
     if #spriteManager.list_sprites~=nil then
       
@@ -52,7 +52,7 @@ function spriteManager.Update(dt)
         local s = spriteManager.list_sprites[i]
         
         s.anime()
-        --s.move() 
+       -- s.move() 
         
       end
       
@@ -60,7 +60,7 @@ function spriteManager.Update(dt)
         
 end
 
-function spriteManager.Draw()
+function spriteManager:Draw()
   
   if #spriteManager.list_sprites~=nil then
 

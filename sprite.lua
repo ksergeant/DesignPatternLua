@@ -2,7 +2,7 @@ local spriteModel = {}
 
 local tileSheetModel = require("tileSheet")
 
-function spriteModel.Create(pName, pNameFile, pTileWidth, pTileHeight, pMap)
+function spriteModel:Create(pName, pNameFile, pTileWidth, pTileHeight, pMap)
   
   local sprite = {}
   
@@ -13,10 +13,10 @@ function spriteModel.Create(pName, pNameFile, pTileWidth, pTileHeight, pMap)
   sprite.oY = 0
   sprite.type = nil
   sprite.currentImage = 1
-  sprite.tileSheet = tileSheetModel.CreateTileSheet(pNameFile, pTileWidth, pTileHeight, pMap)
+  sprite.tileSheet = tileSheetModel:CreateTileSheet(pNameFile, pTileWidth, pTileHeight, pMap)
   sprite.frames = sprite.tileSheet.frames
   
-  function sprite.anime()
+  function sprite:anime()
   
     if sprite.currentImage  < #sprite.frames then 
       sprite.currentImage = sprite.currentImage + 0.15
@@ -27,7 +27,7 @@ function spriteModel.Create(pName, pNameFile, pTileWidth, pTileHeight, pMap)
 
   end
   
-  function sprite.move()
+  function sprite:move()
     
     if sprite.posX > (love.graphics:getWidth() - 40) then
       

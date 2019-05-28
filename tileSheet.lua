@@ -1,6 +1,6 @@
 local tileSheetModel = {}
 
-function tileSheetModel.CreateTileSheet(pNameFile, pTileWidth, pTileHeight, pMap)
+function tileSheetModel:CreateTileSheet(pNameFile, pTileWidth, pTileHeight, pMap)
   
   local tileSheet = {}
   tileSheet.TILE_WIDTH = pTileWidth

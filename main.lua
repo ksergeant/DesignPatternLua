@@ -7,19 +7,19 @@ local myGame = require("game")
 
 function love.load()
   
-  myGame.Load()
+  myGame:Load()
 
 end
 
 function love.update(dt)
   
-  myGame.Update(dt)
+  myGame:Update(dt)
 
 end
 
 function love.draw()
     
-  myGame.Draw()
+  myGame:Draw()
 
 end
 
